@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController as Category;
+use App\Http\Controllers\BrandController as Brand;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum'])->group(function(){
+    //Category
     Route::resource('categories', Category::class);
+
+    //Brand
+    Route::resource('brands', Brand::class);
 });
 
